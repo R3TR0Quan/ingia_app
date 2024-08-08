@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Visits</title>
+</head>
+
+<body>
+    <h1>Log Visitor</h1>
+    <form method="POST" action="{{ url_for('log_visitor') }}">
+        {{ form.hidden_tag() }}  <label for="first_name">First Name:</label>
+        {{ form.visitor_first_name(size=30) }}  <br><br>
+        
+        <label for="last_name">Last Name:</label>
+        {{ form.visitor_last_name(size=30) }}<br><br>
+        
+        <label for="nickname">Nickname:</label>
+        {{ form.nickname(size=30) }}<br><br>
+        
+        <label for="phone">Phone Number:</label>
+        {{ form.phone(size=30) }}<br><br>
+        
+        <label for="destination">Visitor Destination:</label>
+        {{ form.visitor_destination(size=30) }}<br><br>
+        
+        <button type="submit">Log Visitor</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li class="flash {{ message.category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+
+</html>
