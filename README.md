@@ -3,7 +3,7 @@ A one stop security solution for logging and monitoring visitor to a specific pr
 
 # File Hierarchy
 
-        ingia_app/
+    ingia_app/
     ├── backend
     │   ├── app
     │   │   ├── app.py
